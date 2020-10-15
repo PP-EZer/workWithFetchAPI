@@ -1,23 +1,22 @@
-  import React, {Component} from 'react';
+import React, {Component} from 'react';
 import {Col, Row, Container} from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
-import ItemList from '../itemList';
 import ErrorMessage from '../error';
-import PersonDetails from '../personDetails';
+import CharacterPage from "../characterPage";
 
 import './app.css';
 
 export default class App extends Component {
     state = {
         showRandomChar: true,
-        error: false,
-        selectedChar: 130
+        error: false
     }
 
-    onCharSelected = (id) => {
+    componentDidCatch() {
+        console.log("error");
         this.setState({
-            selectedChar: id
+            error: true
         })
     }
 
@@ -51,14 +50,7 @@ export default class App extends Component {
                             </button>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md='6'>
-                            <ItemList onCharSelected={this.onCharSelected}/>
-                        </Col>
-                        <Col md='6'>
-                            <PersonDetails charId={this.state.selectedChar}/>
-                        </Col>
-                    </Row>
+                    <CharacterPage/>
                 </Container>
             </>
         );

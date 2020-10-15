@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
     "bootstrap": "^4.4.1",
+    "http-server": "^0.12.3",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -12,6 +13,9 @@
     "reactstrap": "^7.1.0",
     "request": "^2.88.2",
     "styled-components": "^4.4.1"
+  },
+  "engines": {
+    "node": "12.18.3"
   },
   "scripts": {
     "start": "react-scripts start",
